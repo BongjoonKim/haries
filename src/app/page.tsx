@@ -1,66 +1,308 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="home-page">
+      <div className="container">
+        {/* Hero Section */}
+        <section className="hero-section">
+          <div className="hero-content">
+            <div className="hero-badge animate-fade-in">
+              <span className="badge-line"></span>
+              <span className="badge-text">Art Gallery</span>
+            </div>
+            
+            <h1 className="hero-title animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              Say My
+              <br />
+              <span className="title-accent">Name...</span>
+            </h1>
+            
+            <p className="hero-description animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              Explore the extraordinary world of modern art,
+              <br />
+              where creativity meets innovation
+            </p>
+          </div>
+          
+          <div className="hero-visual animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <div className="visual-grid">
+              <div className="grid-item large">
+                <div className="placeholder-box">
+                  <span className="placeholder-text">Feature Artist</span>
+                </div>
+              </div>
+              <div className="grid-item">
+                <div className="placeholder-box accent">
+                  <span className="placeholder-text">Collection</span>
+                </div>
+              </div>
+              <div className="grid-item">
+                <div className="placeholder-box dark">
+                  <span className="placeholder-text">Exhibition</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Info Section */}
+        <section className="info-section">
+          <div className="info-grid">
+            <div className="info-card animate-slide-in-left">
+              <h3 className="info-number">180°</h3>
+              <p className="info-label">Degrees of Art</p>
+              <p className="info-description">
+                Comprehensive exploration of artistic movements
+              </p>
+            </div>
+            
+            <div className="info-card animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
+              <h3 className="info-title">Fauvism</h3>
+              <p className="info-label">Movement Report</p>
+              <p className="info-description">
+                Bold colors and expressive brushwork
+              </p>
+            </div>
+            
+            <div className="info-card animate-slide-in-left" style={{ animationDelay: '0.4s' }}>
+              <h3 className="info-title">Nice</h3>
+              <p className="info-label">Location</p>
+              <p className="info-description">
+                Where masterpieces were born
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+      
+      <style jsx>{`
+        .home-page {
+          min-height: 100vh;
+          padding: 2rem 0 4rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+          align-items: center;
+          padding: 4rem 0;
+          min-height: 70vh;
+        }
+
+        .hero-content {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        .hero-badge {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          opacity: 0;
+        }
+
+        .badge-line {
+          width: 60px;
+          height: 2px;
+          background-color: var(--text-primary);
+        }
+
+        .badge-text {
+          font-family: var(--font-sans);
+          font-size: 0.9rem;
+          font-weight: 500;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          color: var(--text-secondary);
+        }
+
+        .hero-title {
+          opacity: 0;
+          margin: 0;
+        }
+
+        .title-accent {
+          position: relative;
+          display: inline-block;
+        }
+
+        .title-accent::after {
+          content: '';
+          position: absolute;
+          bottom: 0.5rem;
+          left: 0;
+          right: 0;
+          height: 0.75rem;
+          background-color: var(--accent-yellow);
+          z-index: -1;
+          opacity: 0.7;
+        }
+
+        .hero-description {
+          font-size: 1.15rem;
+          line-height: 1.8;
+          color: var(--text-secondary);
+          max-width: 500px;
+          opacity: 0;
+        }
+
+        /* Visual Grid */
+        .hero-visual {
+          opacity: 0;
+        }
+
+        .visual-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+          height: 500px;
+        }
+
+        .grid-item {
+          border-radius: 8px;
+          overflow: hidden;
+          transition: transform 0.3s var(--transition-bounce);
+        }
+
+        .grid-item:hover {
+          transform: translateY(-8px);
+        }
+
+        .grid-item.large {
+          grid-row: 1 / 3;
+        }
+
+        .placeholder-box {
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, #e5d9c8 0%, #f2ebe1 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid rgba(0, 0, 0, 0.05);
+          transition: all 0.3s ease;
+        }
+
+        .placeholder-box:hover {
+          border-color: rgba(0, 0, 0, 0.15);
+        }
+
+        .placeholder-box.accent {
+          background: linear-gradient(135deg, var(--accent-yellow) 0%, #f4d458 100%);
+        }
+
+        .placeholder-box.dark {
+          background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%);
+        }
+
+        .placeholder-text {
+          font-family: var(--font-serif);
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: var(--text-primary);
+          opacity: 0.4;
+        }
+
+        .placeholder-box.dark .placeholder-text {
+          color: white;
+        }
+
+        /* Info Section */
+        .info-section {
+          padding: 6rem 0 4rem;
+        }
+
+        .info-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 3rem;
+        }
+
+        .info-card {
+          padding: 2.5rem;
+          background: white;
+          border-radius: 12px;
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          transition: all 0.3s ease;
+          opacity: 0;
+        }
+
+        .info-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+          border-color: rgba(0, 0, 0, 0.12);
+        }
+
+        .info-number {
+          font-family: var(--font-serif);
+          font-size: 3.5rem;
+          font-weight: 800;
+          line-height: 1;
+          margin-bottom: 0.5rem;
+        }
+
+        .info-title {
+          font-family: var(--font-serif);
+          font-size: 2rem;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+        }
+
+        .info-label {
+          font-size: 0.85rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: var(--text-tertiary);
+          margin-bottom: 1rem;
+        }
+
+        .info-description {
+          font-size: 0.95rem;
+          line-height: 1.6;
+          color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+          .hero-section {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+          }
+
+          .visual-grid {
+            height: 400px;
+          }
+
+          .info-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .hero-section {
+            padding: 2rem 0;
+          }
+
+          .visual-grid {
+            height: 350px;
+            gap: 1rem;
+          }
+
+          .info-card {
+            padding: 2rem;
+          }
+
+          .info-number {
+            font-size: 2.5rem;
+          }
+        }
+      `}</style>
     </div>
-    
   );
 }

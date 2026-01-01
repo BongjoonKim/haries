@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
-import Header from '@/layout/header/Header';
+import Header from '@/components/Header';
 import './globals.css';
-import {ReactNode} from "react";
 
 export const metadata: Metadata = {
   title: 'Haries Gallery - Art Collection',
@@ -9,18 +8,18 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
- children,
-}: {
-  children: ReactNode;
+                                     children,
+                                   }: {
+  children: React.ReactNode;
 }) {
   return (
     <html lang="ko">
-      <body>
-      <Header />
-      <main className="main-content">
-        {children}
-      </main>
-      </body>
+    <body>
+    <Header />
+    <main className="main-content">
+      {children}
+    </main>
+    </body>
     </html>
   );
 }
