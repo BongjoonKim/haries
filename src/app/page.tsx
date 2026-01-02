@@ -2,10 +2,17 @@
 
 export default function HomePage() {
   return (
-    <div className="home-page">
+    <div className="min-h-screen pt-8 px-0 pb-160">
       <div className="container">
         {/* Hero Section */}
         <section className="hero-section">
+          
+          //  display: grid;
+          //  grid-template-columns: 1fr 1fr;
+          //  gap: 4rem;
+          //  align-items: center;
+          //  padding: 4rem 0;
+          //  min-height: 70vh;
           <div className="hero-content">
             <div className="hero-badge animate-fade-in">
               <span className="badge-line"></span>
@@ -77,20 +84,16 @@ export default function HomePage() {
       </div>
       
       <style jsx>{`
-        .home-page {
-          min-height: 100vh;
-          padding: 2rem 0 4rem;
-        }
 
         /* Hero Section */
-        .hero-section {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 4rem;
-          align-items: center;
-          padding: 4rem 0;
-          min-height: 70vh;
-        }
+        //.hero-section {
+        //  display: grid;
+        //  grid-template-columns: 1fr 1fr;
+        //  gap: 4rem;
+        //  align-items: center;
+        //  padding: 4rem 0;
+        //  min-height: 70vh;
+        //}
 
         .hero-content {
           display: flex;
