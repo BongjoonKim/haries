@@ -5,24 +5,17 @@ export default function HomePage() {
     <div className="min-h-screen pt-8 px-0 pb-160">
       <div className="container">
         {/* Hero Section */}
-        <section className="hero-section">
-          
-          //  display: grid;
-          //  grid-template-columns: 1fr 1fr;
-          //  gap: 4rem;
-          //  align-items: center;
-          //  padding: 4rem 0;
-          //  min-height: 70vh;
-          <div className="hero-content">
-            <div className="hero-badge animate-fade-in">
+        <section className="hero-section grid grid-cols-[1fr_1fr] gap-16 items-center py-16 min-h-[70vh]">
+          <div className="hero-content flex flex-col gap-8">
+            <div className="hero-badge flex items-center gap-4 opacity-0 animate-fade-in">
               <span className="badge-line"></span>
               <span className="badge-text">Art Gallery</span>
             </div>
             
-            <h1 className="hero-title animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              Say My
+            <h1 className="hero-title animate-fade-in-up bg-blue" style={{ animationDelay: '0.2s'}}>
+              Haries Gallery
               <br />
-              <span className="title-accent">Name...</span>
+              <span className="title-accent">Creative, Art...</span>
             </h1>
             
             <p className="hero-description animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
@@ -84,22 +77,6 @@ export default function HomePage() {
       </div>
       
       <style jsx>{`
-
-        /* Hero Section */
-        //.hero-section {
-        //  display: grid;
-        //  grid-template-columns: 1fr 1fr;
-        //  gap: 4rem;
-        //  align-items: center;
-        //  padding: 4rem 0;
-        //  min-height: 70vh;
-        //}
-
-        .hero-content {
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
-        }
 
         .hero-badge {
           display: flex;
