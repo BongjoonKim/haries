@@ -8,37 +8,42 @@ export default function HomePage() {
         <section className="hero-section grid grid-cols-[1fr_1fr] gap-16 items-center py-16 min-h-[70vh]">
           <div className="hero-content flex flex-col gap-8">
             <div className="hero-badge flex items-center gap-4 opacity-0 animate-fade-in">
-              <span className="badge-line"></span>
-              <span className="badge-text">Art Gallery</span>
+              <span className="badge-line w-15 h-0.5 bg-var(--text-primary)"></span>
+              <span className="badge-text font-sans text-[1rem] font-medium tracking-[0.15em] uppercase text-[var(--text-secondary)]">Art Gallery</span>
             </div>
             
-            <h1 className="hero-title animate-fade-in-up bg-blue" style={{ animationDelay: '0.2s'}}>
+            <h1 className="opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s'}}>
               Haries Gallery
               <br />
-              <span className="title-accent">Creative, Art...</span>
+              <span
+                className="title-accent relative inline-block after:content-[''] after:absolute after:bottom-2 after:left-0 after:right-0 after:h-3 after:bg-[var(--accent-yellow)] after:z-[-1] after:opacity-70">
+                Creative, Art...
+              </span>
             </h1>
             
-            <p className="hero-description animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <p
+              className="hero-description text-[1.15rem] leading-[1.8] text-[var(--text-secondary)] max-w-500px opacity-0 animate-fade-in-up"
+              style={{animationDelay: '0.4s'}}>
               Explore the extraordinary world of modern art,
               <br />
               where creativity meets innovation
             </p>
           </div>
           
-          <div className="hero-visual animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <div className="visual-grid">
-              <div className="grid-item large">
+          <div className="hero-visual opacity-0 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <div className="visual-grid grid grid-cols-[repeat(2,_1fr)] gap-6 h-[500px]">
+              <div className="grid-item large rounded-lg overflow-hidden duration-300 [transition:transform_0.3s_var(--transition-bounce)] hover:-translate-y-2 row-span-2">
                 <div className="placeholder-box">
                   <span className="placeholder-text">Feature Artist</span>
                 </div>
               </div>
-              <div className="grid-item">
+              <div className="grid-item rounded-lg overflow-hidden [transition:transform_0.3s_var(--transition-bounce)] hover:-translate-y-2">
                 <div className="placeholder-box accent">
                   <span className="placeholder-text">Collection</span>
                 </div>
               </div>
-              <div className="grid-item">
-                <div className="placeholder-box dark">
+              <div className="grid-item rounded-lg overflow-hidden [transition:transform_0.3s_var(--transition-bounce)] hover:-translate-y-2">
+                <div className="placeholder-box dark w-full">
                   <span className="placeholder-text">Exhibition</span>
                 </div>
               </div>
@@ -77,84 +82,6 @@ export default function HomePage() {
       </div>
       
       <style jsx>{`
-
-        .hero-badge {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-          opacity: 0;
-        }
-
-        .badge-line {
-          width: 60px;
-          height: 2px;
-          background-color: var(--text-primary);
-        }
-
-        .badge-text {
-          font-family: var(--font-sans);
-          font-size: 0.9rem;
-          font-weight: 500;
-          letter-spacing: 0.15em;
-          text-transform: uppercase;
-          color: var(--text-secondary);
-        }
-
-        .hero-title {
-          opacity: 0;
-          margin: 0;
-        }
-
-        .title-accent {
-          position: relative;
-          display: inline-block;
-        }
-
-        .title-accent::after {
-          content: '';
-          position: absolute;
-          bottom: 0.5rem;
-          left: 0;
-          right: 0;
-          height: 0.75rem;
-          background-color: var(--accent-yellow);
-          z-index: -1;
-          opacity: 0.7;
-        }
-
-        .hero-description {
-          font-size: 1.15rem;
-          line-height: 1.8;
-          color: var(--text-secondary);
-          max-width: 500px;
-          opacity: 0;
-        }
-
-        /* Visual Grid */
-        .hero-visual {
-          opacity: 0;
-        }
-
-        .visual-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 1.5rem;
-          height: 500px;
-        }
-
-        .grid-item {
-          border-radius: 8px;
-          overflow: hidden;
-          transition: transform 0.3s var(--transition-bounce);
-        }
-
-        .grid-item:hover {
-          transform: translateY(-8px);
-        }
-
-        .grid-item.large {
-          grid-row: 1 / 3;
-        }
 
         .placeholder-box {
           width: 100%;
